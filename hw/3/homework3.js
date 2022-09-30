@@ -1,4 +1,4 @@
-let op; //выбранный оператор
+let op;
 function func() {
     let result;
     let num1 = Number(document.getElementById("num1").value);
