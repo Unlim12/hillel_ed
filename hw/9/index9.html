@@ -1,0 +1,35 @@
+<html>
+<head>
+    <script src="homework9.js"></script>
+</head>
+<body>
+<div id="array"></div>
+<div id="array1"></div>
+<div id="array2"></div>
+<script>
+    let arrContainer = document.getElementById('array');
+    let arrContainer1 = document.getElementById('array1');
+    let arrContainer2 = document.getElementById('array2');
+    let arg1 = prompt('Введите длину масива');
+    let arr = [];
+    for(let i=0; i < arg1; i++) {
+        while(
+            typeof (arr[i] = prompt('Введите любое имя №'+i)) != 'string' || arr[i].length == 0
+            );
+
+    }
+    arrContainer.innerHTML = arr;
+    console.log(arr);
+
+    arr.sort(function(a, b) {
+        return a - b;
+    });
+    arrContainer1.innerHTML = arr;
+    console.log(arr);
+
+    arr.splice(2, 2)
+    arrContainer2.innerHTML = arr;
+    console.log(arr);
+</script>
+</body>
+</html>
