@@ -1,0 +1,101 @@
+<html>
+<head>
+
+</head>
+<body>
+<div id="div1">Это div 1</div>
+<div id="div2">Это div 2</div>
+<div id="div3">Это div 3</div>
+<script>
+    // функция doMath
+    let number1 = prompt('first number x', '');
+    let number2 = prompt('second number y', '');
+    let does = prompt('enter znak', '');
+
+    function doMath(x, znak, y) {
+        if (znak == '+') {
+            return sum(x, y);
+        } else if (znak == '-') {
+            return x - y;
+        } else if (znak == '*') {
+            return x * y;
+        } else if (znak == '/') {
+            return x / y;
+        } else if (znak == '%') {
+            return x % y;
+        } else if (znak == '^') {
+            return Math.pow(x, y);
+        }
+    }
+    function sum(x, y) {
+        return Number(x) + Number(y);
+    }
+
+    console.log(`Your result ${number1} ${does} ${number2} = ${doMath(number1, does, number2)}`);
+
+
+
+
+    // функция среднее арифмитическое
+    let count = 0;
+    let number = 0;
+    let arr = ['word', 3, 5, 'name', 3.5, true, 7, 8, -2, false,];
+
+    arr.forEach(function (item, index, array) {
+        if (typeof item === 'number') {
+            // console.log(item);
+            count++;
+            number += item;
+        }
+    });
+    let number3 = number / count;
+    console.log(`Average ${number3}`)
+
+
+
+
+    // функция заполнения пользовательскими данными двумерного массива
+
+    let arr1 = [];
+    function array() {
+        let fAr = prompt('main array length?', '1');
+        arr1.length = +fAr;
+        for (let i = 0; i < +fAr; i++) {
+            let arr2 = [];
+            let sAr = prompt('subarray length?', '1');
+            arr1[i] = arr2;
+            arr2.length = +sAr;
+            for (let i = 0; i < arr2.length; i++) {
+                let val = prompt('enter value', '');
+                arr2[i] = val;
+            }
+        }
+        return arr1;
+    }
+    console.log(array());
+
+
+
+    // -Создать функцию которая убирает из строки все символы, которые мы передали вторым аргументом
+
+    let str = 'Hello world?';
+    targ = (prompt('введите символы которые надо удалить через запятую ', ''));
+    let symb = targ.split(',');
+    console.log(symb);
+
+    function del(string, symbolString) {
+        let newstr;
+        a = str.length;
+        for (let i = 0; i < symbolString.length; i++) {
+            let symbol = symbolString[i];
+            for (let i = 0; i < a; i++) {
+                newstr = string.replace(symbol, '');
+                string = newstr;
+            }
+        }
+        return newstr;
+    }
+    console.log(del(str, symb));
+</script>
+</body>
+</html>
